@@ -1,0 +1,12 @@
+.content{
+    width: 70%;
+    height: 70%;
+    margin: auto;
+}
+
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
