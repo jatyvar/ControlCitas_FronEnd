@@ -11,6 +11,11 @@ import { AgendarCitaComponent } from './component/paciente/agendar-cita/agendar-
 import { ConsultarCitaComponent } from './component/paciente/consultar-cita/consultar-cita.component';
 import { EliminarCitaComponent } from './component/paciente/eliminar-cita/eliminar-cita.component';
 import { ModificarCitaComponent } from './component/paciente/modificar-cita/modificar-cita.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AgendarCitaService } from './services/citas/agendar-cita.service';
+import { ConsultarCitasService } from './services/citas/consultar-citas.service';
+import { EliminarCitaService } from './services/citas/eliminar-cita.service';
+import { ModificarCitaService } from './services/citas/modificar-cita.service';
 
 @NgModule({
   declarations: [
@@ -26,9 +31,10 @@ import { ModificarCitaComponent } from './component/paciente/modificar-cita/modi
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AgendarCitaService, ConsultarCitasService,EliminarCitaService,ModificarCitaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
