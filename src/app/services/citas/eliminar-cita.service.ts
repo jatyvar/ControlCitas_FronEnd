@@ -9,18 +9,25 @@ export class EliminarCitaService {
 
   constructor(private http: HttpClient) { }
 
-  public consultarCitas(): Promise<any> {
-      const url = `${environment.apiUrl}/cancelarrCita`;
-      return this.http.get(url).toPromise();
-      
-    //  const headers: HttpHeaders = new HttpHeaders({
-    //  isadmin: 'true'
-    //});
+  public cancelarCita(): Promise<any> {
+    /*const url = `${environment.apiUrl}/cancelarCita`;
+    return this.http.get(url).toPromise();*/
+    const url = `${environment.apiUrl}/consularCita/`;
+    return this.http.get(url).toPromise();
+
+
+  }
+
+
+
+  //  const headers: HttpHeaders = new HttpHeaders({
+  //  isadmin: 'true'
+  //});
   // const params = {
   // idcita: 1,
-  }
+}
 
  // public cancelarCita(id: number): Promise<any> {
  //   return this.http.delete(`${environment.apiUrl}/cancelarCita/${id}`).toPromise();
  // }
-}
+

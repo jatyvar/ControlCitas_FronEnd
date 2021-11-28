@@ -7,28 +7,54 @@
         <div class="card-header">
             Consultar Cita
         </div>
+
         <div class="card-body">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Digite el motivo de consulta..">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11">
+                        <input type="text" id="myInput" onkeyup="myFunction()"
+                            placeholder="Digite el motivo de consulta..">
+
+                    </div>
+                    <div class="col-1">
+                        <button type="button" class="btn btn-outline-success" routerLink="/agendarCita"><i
+                                class="fa fa-ambulance"></i></button>
+                    </div>
+                </div>
+            </div>
+
+
+
 
             <table id="myTable">
-                <tr class="header">
-                    <th style="width:50%;">Motivo</th>
-                    <th style="width:20%;">Consultorio</th>
-                    <th style="width:30%;">Fecha</th>
-                </tr>
-                <tr>
-                    <td>Dolor De Cabeza</td>
-                    <td>01</td>
-                    <td>21-jun-2021</td>
-                </tr>
-                <tr>
-                    <td>Neumonia- Dificultad Para Respirar</td>
-                    <td>07</td>
-                    <td>22-Nov-2021</td>
-                </tr>
+                <thead>
+                    <tr class="header">
+                        <th scope="col">#</th>
+                        <th scope="col">Identificacion</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Consultorio</th>
+                        <th scope="col">Fecha Inicio </th>
+                        <th scope="col">Fecha Fin </th>
+                        <th scope="col">Accion </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cita of citas; let j = index">
+                        <td scope="row">{{j+1}}</td>
+                        <td>{{cita.per_identificacion}}</td>
+                        <td>{{cita.per_nombre}} {{cita.per_apellido}}</td>
+                        <td>{{cita.tbl_consultorio_con_id}}</td>
+                        <td>{{cita.cta_fechaInicio}}</td>
+                        <td>{{cita.cta_fechaFin}}</td>
+                        <td><button type="button" class="btn btn-outline-danger" (click)="cancelarCitas(cita.cta_id)"><i
+                                    class="fa fa-trash-o"></i></button>
+                    </tr>
+                </tbody>
+
             </table>
 
         </div>
+
     </div>
 </div>
 

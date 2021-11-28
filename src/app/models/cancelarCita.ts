@@ -1,4 +1,4 @@
-export interface consultarCitaModel {
+export interface cancelarCitaModel {
     cta_id: number;
     cta_fecharegistro: any;
     cta_estado: number;

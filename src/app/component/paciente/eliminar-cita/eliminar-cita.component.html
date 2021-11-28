@@ -11,24 +11,31 @@
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Digite el motivo de consulta..">
 
             <table id="myTable">
-                <tr class="header">
-                    <th style="width:60%;">Motivo</th>
-                    <th style="width:10%;">Consultorio</th>
-                    <th style="width:20%;">Fecha</th>
-                    <th style="width:10%;">Accion</th>
-                </tr>
-                <tr>
-                    <td>Dolor De Cabeza</td>
-                    <td>01</td>
-                    <td>21-jun-2021</td>
-                    <td><button type="button" class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button></td>
-                </tr>
-                <tr>
-                    <td>Neumonia- Dificultad Para Respirar</td>
-                    <td>07</td>
-                    <td>22-Nov-2021</td>
-                    <td><button type="button" class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button></td>
-                </tr>
+                <thead>
+                    <tr class="header">
+                        <th scope="col">#</th>
+                        <th scope="col">Identificacion</th>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Consultorio</th>
+                        <th scope="col">Fecha Inicio </th>
+                        <th scope="col">Fecha Fin </th>
+                        <th scope="col">Acciones </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--
+                    <tr *ngFor="let cita of citas; let j = index">
+                        <td scope="row">{{j+1}}</td>
+                        <td>{{cita.per_identificacion}}</td>
+                        <td>{{cita.per_nombre}} {{cita.per_apellido}}</td>
+                        <td>{{cita.tbl_consultorio_con_id}}</td>
+                        <td>{{cita.cta_fechaInicio}}</td>
+                        <td>{{cita.cta_fechaFin}}</td>
+                        <td><button type="button" class="btn btn-outline-danger"><i class="fa fa-trash-o"></i></button>
+                        </td>
+                    </tr>
+                    -->
+                </tbody>
             </table>
         </div>
     </div>

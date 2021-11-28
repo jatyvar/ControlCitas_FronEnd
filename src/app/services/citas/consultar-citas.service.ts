@@ -11,21 +11,22 @@ export class ConsultarCitasService {
   constructor(private http: HttpClient) { }
 
   public consultarCitas(): Promise<any> {
-      const url = `${environment.apiUrl}/consultarCita`;
-      return this.http.get(url).toPromise();
-      
-    //  const headers: HttpHeaders = new HttpHeaders({
-    //  isadmin: 'true'
-    //});
-  // const params = {
-  // idcita: 1,
-}
- //   return this.http.get(url, {headers, params}).toPromise();
- //}
- // public obtenerCita(id: number){}
+    const url = `${environment.apiUrl}/consularCita/`;
+    return this.http.get(url).toPromise();
+  }
 
- 
+  public agendarCitas(cita: any) {
+    console.log('Ingresa a service cita');
+    const url = `${environment.apiUrl}/agendarCita`;
+    return this.http.post(url, cita).toPromise();
+  }
 
- 
+  public cancelarCitas(id: number): Promise<any> {
+    return this.http.delete(`${environment.apiUrl}/cancelarCita/${id}`).toPromise();
+  }
+
+
+
+
 
 }

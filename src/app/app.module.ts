@@ -16,6 +16,7 @@ import { AgendarCitaService } from './services/citas/agendar-cita.service';
 import { ConsultarCitasService } from './services/citas/consultar-citas.service';
 import { EliminarCitaService } from './services/citas/eliminar-cita.service';
 import { ModificarCitaService } from './services/citas/modificar-cita.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,10 @@ import { ModificarCitaService } from './services/citas/modificar-cita.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
-  providers: [AgendarCitaService, ConsultarCitasService,EliminarCitaService,ModificarCitaService],
+  providers: [AgendarCitaService, ConsultarCitasService, EliminarCitaService, ModificarCitaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
